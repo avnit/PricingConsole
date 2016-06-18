@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 
-namespace ConsoleApplication1.Classes
+namespace BlackSholvesModelPricing.Classes
 {
     class DatabaseConnection
     {
