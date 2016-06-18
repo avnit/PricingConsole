@@ -62,7 +62,7 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Pricing.cs" />
     <Compile Include="Classes\Stock.cs" />
-    <Compile Include="Classes\YahooWebserivce.cs" />
+    <Compile Include="Classes\YahooWebservice.cs" />
     <Compile Include="BlackSholvesConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
