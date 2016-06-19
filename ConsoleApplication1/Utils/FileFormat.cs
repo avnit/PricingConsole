@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace BlackSholvesModelPricing.Classes
+namespace BlackSholvesModelPricing.Utils
 {
     public class FileFormat
     {

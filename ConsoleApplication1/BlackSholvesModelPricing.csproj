@@ -7,8 +7,8 @@
     <ProjectGuid>{CBA767EE-72ED-4366-A2BE-AD518E2F7D1C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>BlackSholvesModelPricing</RootNamespace>
+    <AssemblyName>BlackSholvesModelPricing</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BlackSholvesModelPricing.BlackSholvesConsole</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,13 +63,13 @@
   <ItemGroup>
     <Compile Include="Calculator\BionomialCalculator.cs" />
     <Compile Include="Calculator\BlackSholvesCalculator.cs" />
-    <Compile Include="Classes\FileFormat.cs" />
-    <Compile Include="Classes\FileParser.cs" />
-    <Compile Include="Classes\Option.cs" />
-    <Compile Include="Classes\DatabaseConnection.cs" />
-    <Compile Include="Classes\Pricing.cs" />
-    <Compile Include="Classes\Stock.cs" />
-    <Compile Include="Classes\YahooWebservice.cs" />
+    <Compile Include="Utils\FileFormat.cs" />
+    <Compile Include="Utils\FileParser.cs" />
+    <Compile Include="Utils\Option.cs" />
+    <Compile Include="Utils\DatabaseConnection.cs" />
+    <Compile Include="Utils\Pricing.cs" />
+    <Compile Include="Utils\Stock.cs" />
+    <Compile Include="Utils\YahooWebservice.cs" />
     <Compile Include="BlackSholvesConsole.cs" />
     <Compile Include="Greeks\Delta.cs" />
     <Compile Include="Greeks\Gamma.cs" />

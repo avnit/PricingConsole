@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BlackSholvesModelPricing.Classes;
+using BlackSholvesModelPricing.Utils;
 using System.IO;
 using System.Globalization;
 
