@@ -32,6 +32,13 @@ namespace BlackSholvesModelPricing
             FileParser FileParser = new FileParser();
 
             #endregion
+
+            #region Database insert 
+            DatabaseConnection DC = new DatabaseConnection();
+            DC.DatabaseName = "model";
+            DC.ServerName = @"(localdb)\MSSQLLocalDB";
+
+            #endregion
         }
     }
 }

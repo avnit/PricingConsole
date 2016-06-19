@@ -8,5 +8,12 @@ namespace BlackSholvesModelPricing.Calculator
 {
     class BionomialCalculator
     {
+
+
+
+        public void Calculator()
+        {
+
+        }
     }
 }
