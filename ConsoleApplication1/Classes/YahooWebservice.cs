@@ -44,13 +44,20 @@ namespace BlackSholvesModelPricing.Classes
 
         public void DownloadFile ()
         {
-            string webserviceUrl = this.WebServiceCall();
-            string dayFile = this.FileName();
-            File.Create(dayFile);
-            WebClient WS = new WebClient();
-            WS.DownloadFile(webserviceUrl, dayFile);
-            Console.WriteLine(this.StockName + " Data downloaded successfully!");
-            WS.Dispose();
+            try
+            {
+                string webserviceUrl = this.WebServiceCall();
+                string dayFile = this.FileName();
+              //  File.Create(dayFile);
+                WebClient WS = new WebClient();
+                WS.DownloadFile(webserviceUrl, dayFile);
+                Console.WriteLine(this.StockName + " Data downloaded successfully!");
+                WS.Dispose();
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("error " + Ex.Message);
+            }
         }
 
     }
