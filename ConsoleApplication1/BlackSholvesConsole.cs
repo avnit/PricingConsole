@@ -13,6 +13,7 @@ namespace BlackSholvesModelPricing
     {
         static void Main(string[] args)
         {
+            #region webservice intial testing 
             YahooWebservice Yw = new YahooWebservice();
             Yw.StockName = "MSFT";
             Yw.Date = DateTime.Today.ToShortDateString().Replace('/','_');
@@ -26,6 +27,11 @@ namespace BlackSholvesModelPricing
             Yw.e = "17";
             Yw.f = "2016";
             Yw.DownloadFile();
+            #endregion
+            #region Parse File 
+            FileParser FileParser = new FileParser();
+
+            #endregion
         }
     }
 }

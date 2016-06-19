@@ -58,6 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\FileFormat.cs" />
+    <Compile Include="Classes\FileParser.cs" />
     <Compile Include="Classes\Option.cs" />
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\Pricing.cs" />

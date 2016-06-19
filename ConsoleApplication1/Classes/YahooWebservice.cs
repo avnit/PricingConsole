@@ -26,13 +26,13 @@ namespace BlackSholvesModelPricing.Classes
         public string e { get; set; }
         public string f { get; set; }
 
-
+        #region get file name 
         protected string FileName()
         {
             return this.Path + "/" + Date + "_" + this.StockName + ".csv";
         }
-
-
+        #endregion
+        #region calling Webservice 
         protected string WebServiceCall()
         {
             //Sample call
@@ -41,7 +41,8 @@ namespace BlackSholvesModelPricing.Classes
             return  this.URL  + this.StockName + "&a=" + this.a + "&b=" + this.b + "&c=" + this.c + 
                     "&d=" + this.d + "&e=" + this.e + "&f" + this.f  + "&g=w&ignore=.csv";
         }
-
+        #endregion
+        #region Download File 
         public void DownloadFile ()
         {
             try
@@ -59,6 +60,7 @@ namespace BlackSholvesModelPricing.Classes
                 Console.WriteLine("error " + Ex.Message);
             }
         }
+        #endregion
 
     }
 }
