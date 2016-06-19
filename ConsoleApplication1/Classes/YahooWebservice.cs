@@ -11,9 +11,21 @@ namespace BlackSholvesModelPricing.Classes
     class YahooWebservice
     {
         public string URL { get; set; }
+        private void SetDefault()
+            {
+                this.URL =  "http://ichart.yahoo.com/table.csv?s=";
+            }
+           
         public string StockName { get; set;}
         public string Date { get; set; }
         public string Path { get; set; }
+        public string a { get; set; }
+        public string b { get; set; }
+        public string c { get; set; }
+        public string d { get; set; }
+        public string e { get; set; }
+        public string f { get; set; }
+
 
         protected string FileName()
         {
@@ -23,7 +35,11 @@ namespace BlackSholvesModelPricing.Classes
 
         protected string WebServiceCall()
         {
-            return "http://" + this.URL + "?stockName = " + this.StockName + "&Date=" + this.Date;
+            //Sample call
+            /// http://ichart.yahoo.com/table.csv?s=MSFT&a=0&b=1&c=2000&d=11&e=24&f=2014&g=w&ignore=.csv
+            SetDefault();
+            return  this.URL  + this.StockName + "&a=" + this.a + "&b=" + this.b + "&c=" + this.c + 
+                    "&d=" + this.d + "&e=" + this.e + "&f" + this.f  + "&g=w&ignore=.csv";
         }
 
         public void DownloadFile ()
