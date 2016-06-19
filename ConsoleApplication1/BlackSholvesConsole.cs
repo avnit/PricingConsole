@@ -37,6 +37,8 @@ namespace BlackSholvesModelPricing
             DatabaseConnection DC = new DatabaseConnection();
             DC.DatabaseName = "model";
             DC.ServerName = @"(localdb)\MSSQLLocalDB";
+            DC.UserName = @"XXXXX";
+            DC.Password = @"XXXX";
 
             #endregion
         }
