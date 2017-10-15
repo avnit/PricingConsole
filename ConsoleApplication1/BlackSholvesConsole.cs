@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using Amazon.OpsWorks.Model;
 using BlackSholvesModelPricing.Utils;
 
 namespace BlackSholvesModelPricing 
@@ -17,7 +19,8 @@ namespace BlackSholvesModelPricing
             yw.Date = DateTime.Today.ToShortDateString().Replace('/','_');
            // Yw.Date = DateTime.ParseExact(Today, "MM/dd/yyyy",CultureInfo.InvariantCulture).ToString(); ;
             //  Yw.Path = Directory.GetCurrentDirectory();
-            yw.Path = @"C:\Users\Avnit Bambah\Downloads";
+            yw.Path = ConfigurationManager.AppSettings["path"];
+          //  yw.Path = @"C:\Users\Avnit Bambah\Downloads";
             yw.a = "0";
             yw.b = "1";
             yw.c = "2000";
