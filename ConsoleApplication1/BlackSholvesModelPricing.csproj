@@ -63,6 +63,10 @@
       <HintPath>..\packages\AWSSDK.S3.3.1.9.0\lib\net45\AWSSDK.S3.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="QLNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QLNet.1.9.2\lib\net45\QLNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,6 +85,7 @@
     <Compile Include="Utils\DatabaseConnection.cs" />
     <Compile Include="Utils\Pricing.cs" />
     <Compile Include="Utils\Stock.cs" />
+    <Compile Include="Utils\WorkManager.cs" />
     <Compile Include="Utils\YahooWebservice.cs" />
     <Compile Include="BlackSholvesConsole.cs" />
     <Compile Include="Greeks\Delta.cs" />
