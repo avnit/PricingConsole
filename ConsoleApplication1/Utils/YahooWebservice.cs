@@ -38,8 +38,8 @@ namespace BlackSholvesModelPricing.Utils
             //Sample call
             /// http://ichart.yahoo.com/table.csv?s=MSFT&a=0&b=1&c=2000&d=11&e=24&f=2014&g=w&ignore=.csv
             SetDefault();
-            return  this.URL  + this.StockName + "&a=" + this.a + "&b=" + this.b + "&c=" + this.c + 
-                    "&d=" + this.d + "&e=" + this.e + "&f" + this.f  + "&g=w&ignore=.csv";
+            return string.Format("{0}={1}&a={2}&b={3}&c={4}&d={5}&e={6}&f={7}&g=w&ignore=.csv", this.URL, this.StockName,
+                this.a, this.b, this.c, this.d, this.e, this.f);
         }
         #endregion
         #region Download File 
