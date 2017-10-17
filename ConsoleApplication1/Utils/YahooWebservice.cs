@@ -13,7 +13,7 @@ namespace BlackSholvesModelPricing.Utils
         public string URL { get; set; }
         private void SetDefault()
             {
-                this.URL =  "http://ichart.yahoo.com/table.csv?s=";
+                this.URL =  "http://ichart.yahoo.com/table.csv?s";
             }
            
         public string StockName { get; set;}
