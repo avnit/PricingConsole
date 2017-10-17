@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Calculator\BionomialCalculator.cs" />
     <Compile Include="Calculator\BlackSholvesCalculator.cs" />
+    <Compile Include="Calculator\Bonds.cs" />
     <Compile Include="Utils\FileFormat.cs" />
     <Compile Include="Utils\FileParser.cs" />
     <Compile Include="Utils\Option.cs" />
