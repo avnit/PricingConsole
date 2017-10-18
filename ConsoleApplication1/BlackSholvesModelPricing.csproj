@@ -113,8 +113,8 @@
     <Compile Include="Calculator\BionomialCalculator.cs" />
     <Compile Include="Calculator\BlackSholvesCalculator.cs" />
     <Compile Include="Calculator\Bonds.cs" />
-    <Compile Include="Spanner\SpannerConnect.cs" />
-    <Compile Include="Spanner\SpannerConnection.cs" />
+    <Content Include="Spanner\SpannerConnect.cs" />
+    <Content Include="Spanner\SpannerConnection.cs" />
     <Compile Include="Utils\FileFormat.cs" />
     <Compile Include="Utils\FileParser.cs" />
     <Compile Include="Utils\Option.cs" />

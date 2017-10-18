@@ -9,6 +9,6 @@ namespace BlackSholvesModelPricing.Utils
     class WorkManager
     {
         public string path { get; set; }
-        public string currentBusinessDate { get; set; }
+        public string CurrentBusinessDate { get; set; }
     }
 }

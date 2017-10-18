@@ -17,8 +17,6 @@ namespace BlackSholvesModelPricing
             YahooWebservice yw = new YahooWebservice();
             yw.StockName = "MSFT";
             yw.Date = DateTime.Today.ToShortDateString().Replace('/','_');
-           // Yw.Date = DateTime.ParseExact(Today, "MM/dd/yyyy",CultureInfo.InvariantCulture).ToString(); ;
-            //  Yw.Path = Directory.GetCurrentDirectory();
             yw.Path = ConfigurationManager.AppSettings["path"];
           //  yw.Path = @"C:\Users\Avnit Bambah\Downloads";
             yw.a = "0";
@@ -35,11 +33,14 @@ namespace BlackSholvesModelPricing
             #endregion
 
             #region Database insert 
-            DatabaseConnection dc = new DatabaseConnection();
-            dc.DatabaseName = "model";
-            dc.ServerName = @"(localdb)\MSSQLLocalDB";
-            dc.UserName = @"XXXXX";
-            dc.Password = @"XXXX";
+
+            DatabaseConnection dc = new DatabaseConnection
+            {
+                DatabaseName = ConfigurationManager.AppSettings["DbName"],
+                ServerName = ConfigurationManager.AppSettings["serverName"],
+                UserName = ConfigurationManager.AppSettings["user"],
+                Password = ConfigurationManager.AppSettings["password"]
+            };
 
             #endregion
         }
@@ -83,7 +84,7 @@ namespace BlackSholvesModelPricing
                                 Work.path = param.Trim();
                                 break;
                             case 2:
-                                Work.currentBusinessDate = param.Trim();
+                                Work.CurrentBusinessDate = param.Trim();
                                 break;
                         }
                     }
