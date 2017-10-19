@@ -37,24 +37,25 @@ namespace BlackSholvesModelPricing.Utils
                 //return null;
             }
         }
-        public int ExecuteStoredProcedure(string StoredProcedureName, Dictionary<string,string> Parameter)
+        public int ExecuteStoredProcedure(string storedProcedureName, Dictionary<string,string> parameter)
         {
+            if (storedProcedureName == null) throw new ArgumentNullException(nameof(storedProcedureName));
             try
             {
                 SqlCommand SC = new SqlCommand();
                 SC.CommandTimeout = 0;
-                foreach (KeyValuePair<string, string> KT in Parameter)
+                foreach (KeyValuePair<string, string> kt in parameter)
                 {
-                    SC.Parameters.AddWithValue(KT.Key, KT.Value);
+                    SC.Parameters.AddWithValue(kt.Key, kt.Value);
                 }
                 SC.Connection = SqlConnection();
-                SC.CommandText = StoredProcedureName;
+                SC.CommandText = storedProcedureName;
                 return SC.ExecuteNonQuery();
             }
-            catch (SqlException Ex)
+            catch (SqlException ex)
             {
-                Console.Write("Sql Exception" + Ex.ToString());
-                throw (Ex);
+                Console.Write("Sql Exception" + ex);
+                throw;
             //    return Ex.Number; //Error Code 
             }
         }

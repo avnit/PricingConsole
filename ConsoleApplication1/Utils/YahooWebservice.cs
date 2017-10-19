@@ -13,7 +13,7 @@ namespace BlackSholvesModelPricing.Utils
         public string URL { get; set; }
         private void SetDefault()
             {
-                this.URL =  "http://ichart.yahoo.com/table.csv?s";
+                URL =  "http://ichart.yahoo.com/table.csv?s";
             }
            
         public string StockName { get; set;}
@@ -29,7 +29,7 @@ namespace BlackSholvesModelPricing.Utils
         #region get file name 
         protected string FileName()
         {
-            return this.Path + "/" + Date + "_" + this.StockName + ".csv";
+            return Path + "/" + Date + "_" + StockName + ".csv";
         }
         #endregion
         #region calling Webservice 
@@ -38,8 +38,8 @@ namespace BlackSholvesModelPricing.Utils
             //Sample call
             /// http://ichart.yahoo.com/table.csv?s=MSFT&a=0&b=1&c=2000&d=11&e=24&f=2014&g=w&ignore=.csv
             SetDefault();
-            return string.Format("{0}={1}&a={2}&b={3}&c={4}&d={5}&e={6}&f={7}&g=w&ignore=.csv", this.URL, this.StockName,
-                this.a, this.b, this.c, this.d, this.e, this.f);
+            return
+                $"{URL}={StockName}&a={a}&b={b}&c={c}&d={d}&e={e}&f={f}&g=w&ignore=.csv";
         }
         #endregion
         #region Download File 
@@ -47,17 +47,17 @@ namespace BlackSholvesModelPricing.Utils
         {
             try
             {
-                string webserviceUrl = this.WebServiceCall();
-                string dayFile = this.FileName();
-              //  File.Create(dayFile);
-                WebClient WS = new WebClient();
-                WS.DownloadFile(webserviceUrl, dayFile);
-                Console.WriteLine(this.StockName + " Data downloaded successfully!");
-                WS.Dispose();
+                var webserviceUrl = WebServiceCall();
+                var dayFile = FileName();
+              
+                var ws = new WebClient();
+                ws.DownloadFile(webserviceUrl, dayFile);
+                Console.WriteLine(StockName + " Data downloaded successfully!");
+                ws.Dispose();
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("error " + Ex.Message);
+                Console.WriteLine("error " + ex.Message);
             }
         }
         #endregion

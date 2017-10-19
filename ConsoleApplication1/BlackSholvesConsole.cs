@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
-using Amazon.OpsWorks.Model;
 using BlackSholvesModelPricing.Utils;
 
 namespace BlackSholvesModelPricing 
 {
- 
-    class BlackSholvesConsole
+    internal class BlackSholvesConsole
     {
         public static WorkManager Work;
         static void Main(string[] args)
@@ -14,17 +13,19 @@ namespace BlackSholvesModelPricing
             Work = new WorkManager();
             ProcessParameters(args);
             #region webservice intial testing 
-            YahooWebservice yw = new YahooWebservice();
-            yw.StockName = "MSFT";
-            yw.Date = DateTime.Today.ToShortDateString().Replace('/','_');
-            yw.Path = ConfigurationManager.AppSettings["path"];
-          //  yw.Path = @"C:\Users\Avnit Bambah\Downloads";
-            yw.a = "0";
-            yw.b = "1";
-            yw.c = "2000";
-            yw.d = "6";
-            yw.e = "17";
-            yw.f = "2016";
+            var yw = new YahooWebservice
+            {
+                StockName = "MSFT",
+                Date = DateTime.Today.ToShortDateString().Replace('/', '_'),
+                Path = ConfigurationManager.AppSettings["path"],
+                a = "0",
+                b = "1",
+                c = "2000",
+                d = "6",
+                e = "17",
+                f = "2016"
+            };
+            //  yw.Path = @"C:\Users\Avnit Bambah\Downloads";
             yw.DownloadFile();
             #endregion
             #region Parse File 
@@ -45,7 +46,7 @@ namespace BlackSholvesModelPricing
             #endregion
         }
 
-        private static void ProcessParameters(string[] args)
+        private static void ProcessParameters(IReadOnlyList<string> args)
         {
             var type = -1;
             var pSwitch = false;
@@ -53,7 +54,7 @@ namespace BlackSholvesModelPricing
             try
             {
                 int i;
-                for (i = 0; i <= args.Length; i++)
+                for (i = 0; i <= args.Count; i++)
                 {
                     var param = args[i];
                     if ((param.Length == 2) && ('/' == param[0]))
